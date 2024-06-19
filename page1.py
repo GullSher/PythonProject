@@ -6,7 +6,7 @@ def open_mainframe():
 
 # Create the main window
 window = tk.Tk()
-window.title("Main Form")
+window.title("Page 1 Frame")
 
 # Create a button to open Page 1
 page1_button = tk.Button(window, text="Go to Main Frame", command=open_mainframe)
