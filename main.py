@@ -91,7 +91,7 @@
 # Run the main loop
 #window.mainloop()
 
-#====================
+#================
 import tkinter as tk
 import subprocess
 
@@ -102,22 +102,28 @@ def open_page1():
 window = tk.Tk()
 window.title("Main Page")
 window.configure(bg="lightblue")  # Change background color of the main window
-
+#window.geometry("1000x1000")  # Set window size to 450x450
+window.geometry("1200x1200")
 # Create the main frame
-main_frame = tk.Frame(window, bg="red")
-main_frame.pack(fill="both", expand=True, padx=350, pady=350)
+main_frame = tk.Frame(window, bg="red", width='1180px', height='1180px')
+main_frame.pack(fill="both", expand=True, padx=2, pady=2)
+main_frame.pack_propagate(False)  # Prevent the main frame from adjusting its size
 
 # Create the first sub-frame
-frame1 = tk.Frame(main_frame, bg="white", bd=2, relief="sunken", width=200, height=300)
-frame1.pack(side="left", padx=(0, 1), pady=10)  # padx (0, 1) to ensure 2px distance between frames
+frame1 = tk.Frame(main_frame, bg="orange", bd=2, relief="sunken")
+frame1.pack(side="left", padx=(0, 1), pady=2)
+frame1.pack_propagate(False)  # Prevent the frame1 from adjusting its size
+frame1.configure(width='600px', height='600px')
 
 # Add a label to the first sub-frame
 label1 = tk.Label(frame1, text="Frame 1", bg="white")
 label1.pack(pady=5)
 
 # Create the second sub-frame
-frame2 = tk.Frame(main_frame, bg="white", bd=2, relief="sunken", width=200, height=300)
-frame2.pack(side="left", padx=(1, 0), pady=10)  # padx (1, 0) to ensure 2px distance between frames
+frame2 = tk.Frame(main_frame, bg="green", bd=2, relief="sunken")
+frame2.pack(side="left", padx=(1, 0), pady=2)
+frame2.pack_propagate(False)  # Prevent the frame2 from adjusting its size
+frame2.configure(width='300px', height='300px')
 
 # Add a label to the second sub-frame
 label2 = tk.Label(frame2, text="Frame 2", bg="white")
@@ -129,5 +135,3 @@ page1_button.pack(padx=20, pady=20)
 
 # Run the main loop
 window.mainloop()
-
-
